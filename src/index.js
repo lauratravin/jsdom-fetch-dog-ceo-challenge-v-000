@@ -47,18 +47,18 @@ function renderTests(Images){
 function addBreedSelectListener(){
   let breedDropdown = document.querySelector('#breed-dropdown');
   breedDropdown.addEventListener('change',(e) => {
-    console.log(e.target.value);
     let ul = document.querySelector('#dog-breeds');
     removeOldUl(ul); //clean the li.
     let selectBreeds = aBreeds.filter( (item) => { return item[0] === e.target.value; });
     console.log(selectBreeds) ;
-    
+    updateBreedList(selectBreeds);
+
   });
 }
 
  function renderBreeds(Breeds){
    aBreeds =  Object.keys(Breeds);  //move the breeds keys in the object into the array
-   updateBreedList();
+   updateBreedList(aBreeds);
    addBreedSelectListener(); //for the select option
  }
 
@@ -71,10 +71,10 @@ function addBreedSelectListener(){
  function updateColor(e){
    e.target.style.color="red";
  }
- function updateBreedList(){
+ function updateBreedList(arrayBreed){
    let ul = document.querySelector('#dog-breeds');
    removeOldUl(ul);
-   for (const p of aBreeds){
+   for (const p of arrayBreed){
      let li = document.createElement('li');
      li.textContent= p;
      li.style.cursor = 'pointer';
