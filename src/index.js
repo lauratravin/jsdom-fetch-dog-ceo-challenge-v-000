@@ -44,9 +44,17 @@ function renderTests(Images){
    });
  }
 
+function addBreedSelectListener(){
+  let breedDropdown = document.querySelector('#breed-dropdown');
+  breedDropdown.addEventListener('change',(e) => {
+    console.log(e.target.value);
+  });
+}
+
  function renderBreeds(Breeds){
    aBreeds =  Object.keys(Breeds);  //move the breeds keys in the object into the array
    updateBreedList();
+   addBreedSelectListener(); //for the select option
  }
 
  function removeOldUl(ul){
