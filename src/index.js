@@ -50,7 +50,7 @@ function addBreedSelectListener(){
     let ul = document.querySelector('#dog-breeds');
     removeOldUl(ul); //clean the li.
     let selectBreeds = aBreeds.filter( (item) => { return item[0] === e.target.value; });
-    console.log(selectBreeds) ;
+    // console.log(selectBreeds) ;
     updateBreedList(selectBreeds);
 
   });
