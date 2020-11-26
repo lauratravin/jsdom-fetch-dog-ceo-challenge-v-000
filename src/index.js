@@ -49,7 +49,10 @@ function addBreedSelectListener(){
   breedDropdown.addEventListener('change',(e) => {
     console.log(e.target.value);
     let ul = document.querySelector('#dog-breeds');
-    removeOldUl(ul);
+    removeOldUl(ul); //clean the li.
+    let selectBreeds = aBreeds.filter( (item) => { item[0] === e.target.value };
+    console.log(selectBreeds) ; 
+    )
   });
 }
 
