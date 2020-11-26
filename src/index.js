@@ -21,7 +21,7 @@ console.log('%c HI', 'color: firebrick')
 // buhund: ["norwegian"]
 // bulldog: (3) ["boston", "english", "french"]
 // bullterrier: ["staffordshire"]
-
+document.addEventListener('DOMContentLoaded', function() {
 function fetchDogs(){
   return fetch(imgUrl)
   .then(resp => resp.json())
@@ -87,8 +87,7 @@ function addBreedSelectListener(){
  let aBreeds= [];
  const imgUrl = "https://dog.ceo/api/breeds/image/random/4";
  const breedsUrl = "https://dog.ceo/api/breeds/list/all";
-// document.addEventListener('DOMContentLoaded', function() {
   fetchDogs();
   fetchBreeds();
 
-// })
+})
